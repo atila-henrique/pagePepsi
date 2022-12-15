@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&family=Roboto:wght@700;900&display=swap');
+
+:root{
+    --bgBlue: #0062be;
+    --bgRed: #e60c2c;
+    --bgBlack: #1e1e1e;
+}
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #FFFFFF;
+}
+
+section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;    
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0062be;
+    transition: 0.7s;
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo{
+    position: relative;
+    max-width: 80px;
+} 
+
+header ul{
+    position: relative;
+    display: flex;
+    gap: 40px;
+
+}
+
+header ul li { 
+    list-style: none;
+}
+
+header ul li a {
+    display: inline-block;
+    color: #FFFFFF;
+    font-weight: 400;    
+    text-decoration: none;
+}
+
+.content{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content .textBox{
+    position: relative;
+    max-width: 600px;
+}
+
+.content .textBox h2{
+    font-size: 4em;
+    line-height: 1.5em;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.content .textBox h2 span{
+    font-size: 2em
+}
+
+.content .textBox a{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 20px;
+    background: #FFFFFF;
+    color: #222;
+    border-radius: 40px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .5s;
+}
+
+.content .textBox a:hover{
+    padding: 10px 22px;
+}
+.content .imgBox{
+    width: 600px;
+    display: flex;
+    padding-right: 50px;
+    margin-top: 50px;
+    justify-content: flex-end;
+}
+
+.content .imgBox img{
+    width: 260px;
+} 
+
+.thumb{
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    display: flex; 
+    gap: 40px;   
+}
+
+.thumb li{
+    list-style: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.thumb li:hover{
+    transform: translateY(-15%);
+}
+
+.thumb img{
+    width: 40px;
+}
+
+.socialMedia{
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialMedia li{
+    list-style: none;
+}
+
+.socialMedia li a{
+    display: inline-block;
+    filter: invert(1);
+    margin: 5px 0;
+    transform: scale(0.6);
+}
+
+/*RESPONSIVE*/
+
+@media (max-width: 991px) {
+    section{
+        padding: 40px;
+        padding-bottom: 130px;
+    }
+
+    header{
+        padding: 20px 40px;
+    }
+    
+    header .logo{
+        position: relative;
+        max-width: 60px;
+    }
+
+    header ul{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #ffffff;
+        z-index: 1;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.2s;
+        gap: 10px;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    header ul.active{
+        visibility: visible;
+        opacity: 1;
+    }
+    
+    header ul li a{
+        display: inline-block;
+        color: #222;
+        font-weight: 400;
+        font-size: 1.8em;
+        margin: 10px 0;
+        transition: .3s;
+    }
+
+    header ul li a:hover{
+        color: var(--bgRed);
+    }
+
+    .toggleMenu{
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background: url(./assets/menu.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 2;
+        cursor: pointer;
+    }
+
+    .toggleMenu.active{
+        background: url(./assets/close.png);
+        background-position: center;
+        background-size: 25px;
+        background-repeat: no-repeat;
+        filter: invert(1); 
+    }
+
+    .content{
+        flex-direction: column;
+        margin-top: 80px;
+    }
+
+    .content .textBox{
+        position: relative;
+        max-width: 100%;
+        padding-right: 20px;
+    }
+
+    .content .textBox h2{
+        font-size: 3em;
+    }
+
+    .content .textBox a{
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .content .imgBox{
+        width: 100%;
+        display: flex;
+        padding-right: 0;
+        margin-top: 50px;
+        justify-content: center;
+    }
+
+    .content .imgBox img{
+        max-width: 150px;
+    }
+
+    .thumb li img{
+        max-width: 34px;
+    }
+
+    .socialMedia{
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 50px;
+        background: rgba(0, 0, 0, .2);
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+}

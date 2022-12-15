@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Website Pepsi</title>
+</head>
+<body>
+    <section class="sec">        
+        <header>         
+            <a href="#"><img src="./assets/logo.png" class="logo"></img></a>   
+            <div class="toggleMenu" onclick="menuToggle()"></div>
+            <ul class="navigation">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">What's New</a></li>
+                <li><a href="#">Newsletter</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textBox">
+                <h2>That's What <br><span>I like</span></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum asperiores explicabo aut et voluptatum, quae quo vel accusamus aperiam nulla eveniet debitis eaque, id officia aliquam iure quos. Magni, nesciunt! I  id officia aliquam iure quos. Magni, nesciunt!</p>
+                <a href="#">View All Products</a>                
+            </div>
+            <div class="imgBox">
+                <img src="./assets/pepsi001.png" alt="Imagem Azul da Pepsi" class="pepsi">
+            </div>            
+        </div>
+        <ul class="thumb">
+            <li><img src="./assets/pepsi001.png" onclick="trocarLata('./assets/pepsi001.png'),
+             mudarBgColor('var(--bgBlue)')" alt="Latinha da Pepsi"></li>
+            <li><img src="./assets/pepsi002.png" onclick="trocarLata('./assets/pepsi002.png'), 
+            mudarBgColor('var(--bgRed)')" alt="Latinha da Pepsi"></li>
+            <li><img src="./assets/pepsi003.png" onclick="trocarLata('./assets/pepsi003.png'), 
+            mudarBgColor('var(--bgBlack)')" alt="Latinha da Pepsi"></li>
+        </ul>
+        <ul class="socialMedia">
+            <li><a href="#"><img src="./assets/facebook.png" alt="Icone facebook"></a></li>
+            <li><a href="#"><img src="./assets/instagram.png" alt="Icone instagram"></a></li>
+            <li><a href="#"><img src="./assets/twitter.png" alt="Icone twitter"></a></li>
+        </ul>
+    </section>    
+    
+</body>
+
+<script type="text/javascript">
+    function trocarLata(nomeLata){
+        document.querySelector('.pepsi').src = nomeLata
+    }
+    function mudarBgColor(color){
+        const sec = document.querySelector('.sec');
+        sec.style.background = color;
+    }
+    function menuToggle(){
+        const toggleMenu = document.querySelector('.toggleMenu');
+        const navigation = document.querySelector('.navigation');
+        toggleMenu.classList.toggle('active')
+        navigation.classList.toggle('active')
+    }
+</script>    
+
+</html>
